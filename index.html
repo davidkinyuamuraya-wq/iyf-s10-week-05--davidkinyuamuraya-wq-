@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>DOM Practice</title>
-    <style>
-        .highlight { background-color: yellow; }
-        .container { padding: 20px; border: 1px solid #ccc; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To Do List</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <header id="main-header">
-        <h1>DOM Practice</h1>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">About</a></li>
-                <li><a href="#" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main class="container">
-        <article>
-            <h2 class="title">Article Title</h2>
-            <p class="content">This is the first paragraph.</p>
-            <p class="content">This is the second paragraph.</p>
-        </article>
-        
-        <section>
-            <h2>Form Section</h2>
-            <form id="contact-form">
-                <input type="text" id="name" name="name" placeholder="Name">
-                <input type="email" id="email" name="email" placeholder="Email">
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2026</p>
-    </footer>
-    
-    <script src="dom.js"></script>
+
+<div class="container">
+  <h1>My To-Do List</h1>
+  <p class="subtitle">Built with DOM manipulation & event listeners</p>
+
+  <!-- Stats -->
+  <div class="stats">
+    <span>Total: <b id="total">0</b></span>
+    <span>Active: <b id="active">0</b></span>
+    <span>Completed: <b id="completed">0</b></span>
+  </div>
+
+  <!-- Input -->
+  <div class="input-section">
+    <input type="text" id="taskInput" placeholder="Add a new task..." />
+    <button id="addBtn">Add Task</button>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters">
+    <button class="filter active" data-filter="all">ALL</button>
+    <button class="filter" data-filter="active">ACTIVE</button>
+    <button class="filter" data-filter="completed">COMPLETED</button>
+  </div>
+
+  <!-- Task List -->
+  <ul id="taskList"></ul>
+
+  <!-- Clear -->
+  <button id="clearCompleted">Clear Completed</button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
